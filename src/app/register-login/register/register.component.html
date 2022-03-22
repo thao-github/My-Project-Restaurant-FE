@@ -1,0 +1,38 @@
+<!-- Register Section -->
+<div class="w3-content" style="max-width:900px">
+<div class="w3-container w3-padding-64" id="contact">
+  <h1>Register</h1><br>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <p>Please fill in this form to create an account.</p>
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Name" formControlName="name">
+      <small style="color: darkred" *ngIf="registerForm.controls['name'].hasError('required')
+      && registerForm.controls['name'].touched">Name required.</small>
+    </div>
+
+    <div><input class="w3-input w3-padding-16" type="text" placeholder="Username" formControlName="username">
+    <small style="color: darkred" *ngIf="registerForm.controls['username'].hasError('required')
+      && registerForm.controls['username'].touched">Username required.</small>
+    </div>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Email" formControlName="email">
+      <small style="color: darkred" *ngIf="registerForm.controls['email'].hasError('required')
+      && registerForm.controls['email'].touched">Email required.</small>
+      <small style="color: darkred" *ngIf="registerForm.controls['email'].hasError('email')
+      && registerForm.controls['email'].touched">Email invalid. Ex user@gmail.com</small>
+
+    </div>
+
+
+    <div><input class="w3-input w3-padding-16" type="password" placeholder="Password" formControlName="password">
+      <small style="color: darkred" *ngIf="registerForm.controls['password'].hasError('required')
+      && registerForm.controls['password'].touched">Password required.</small>
+    </div>
+    <p>By creating an account you agree to our <a style="color: darkblue" href="#">Terms & Privacy</a>.</p>
+    <p style="color: darkred">{{status}}</p>
+    <p><button class="w3-button w3-light-grey w3-section" type="submit">REGISTER</button></p>
+    <p>Already have an account? <a style="color: darkblue" routerLink="/login">Sign in</a>.</p>
+  </form>
+</div>
+</div>

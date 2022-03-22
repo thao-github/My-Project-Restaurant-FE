@@ -1,0 +1,32 @@
+<!-- Order Section -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="w3-content" style="max-width:900px">
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Order</h1><br>
+
+      <div class="w3-col l6 w3-padding-large">
+        <img src="{{dish?.img}}" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+      </div>
+
+      <h4>{{dish?.name}}</h4>
+      <p>{{dish.price}}$</p>
+      <div class="qty mt-5">
+        <span (click)="minus()" class="minus bg-dark">-</span>
+        <input type="number" class="count" name="qty" value="{{quantity}}">
+        <span (click)="plus()" class="plus bg-dark">+</span>
+      </div>
+      <p style="float: left" class="w3-text-grey">{{dish?.description}}</p><br>
+      <h4><b>Total: {{totalPrice}}$ </b></h4>
+
+
+    </div>
+
+
+  </div>
+</div>
+
+

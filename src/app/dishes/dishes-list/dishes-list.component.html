@@ -1,0 +1,20 @@
+<!-- Menu Section -->
+<div class="w3-content" style="max-width:1100px">
+<div class="w3-row w3-padding-64" id="menu">
+  <h1 class="l6 w3-padding-large w3-center">Our Menu <br>
+    <p *ngIf="token"><button class="w3-button w3-light-grey w3-section" routerLink="/dishes/add">ADD Dish</button></p>
+  </h1>
+
+  <div class=" l6 w3-padding-large" *ngFor="let dish of dishes, index as i">
+    <h4>{{dish.name}}
+      <mat-icon *ngIf="token" [routerLink]="['/dishes/edit', dish.id]">edit</mat-icon>
+      <mat-icon *ngIf="token" [routerLink]="['/dishes/delete', dish.id]">delete</mat-icon>
+      <mat-icon [routerLink]="['/order', dish.id]">add</mat-icon>
+    </h4>
+    <p class="w3-text-grey">{{dish.description}} ${{dish.price}}</p><br>
+    <img src="{{dish.img}}" style="width: 60px; height: 60px">
+  </div>
+</div>
+<hr>
+</div>
+

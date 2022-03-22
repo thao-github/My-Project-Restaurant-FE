@@ -1,0 +1,35 @@
+<!-- Register Section -->
+<div class="w3-content" style="max-width:1100px">
+<div class="w3-container w3-padding-64" id="contact">
+  <h1>Delete Dish</h1><br>
+  <form [formGroup]="dishForm" (ngSubmit)="delete(id)">
+    <p>Are you sure to DELETE this dish?</p>
+
+    <div hidden>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Id" formControlName="id">
+    </div>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Name" formControlName="name">
+    </div>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Price" formControlName="price">
+    </div>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Description" formControlName="description">
+    </div>
+
+    <div>
+      <img src="" alt="">
+    </div>
+
+    <p style="color: darkgreen">{{status}}</p>
+    <p><button class="w3-button w3-light-grey w3-section" type="submit">DELETE</button> &nbsp;
+      <button class="w3-button w3-light-grey w3-section" type="button" routerLink="/dishes">BACK</button></p>
+
+  </form>
+</div>
+</div>
+

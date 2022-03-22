@@ -1,0 +1,21 @@
+<!--Login contact Section -->
+<div class="w3-content" style="max-width:900px">
+<div class="w3-container w3-padding-64" id="contact">
+  <h1>Sign-in</h1><br>
+  <p>Please fill in this form to log in.</p>
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()" >
+    <div><input class="w3-input w3-padding-16" type="text" placeholder="Username" formControlName="username">
+      <small style="color: darkred" *ngIf="loginForm.controls['username'].hasError('required')
+      && loginForm.controls['username'].touched">Username required.</small>
+    </div>
+
+    <div><input class="w3-input w3-padding-16" type="password" placeholder="Password" formControlName="password">
+      <small style="color: darkred" *ngIf="loginForm.controls['password'].hasError('required')
+      && loginForm.controls['password'].touched">Password required.</small>
+    </div>
+
+    <p><button class="w3-button w3-light-grey w3-section" type="submit">LOG IN</button></p>
+  </form>
+</div>
+</div>
+

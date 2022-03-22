@@ -1,0 +1,19 @@
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a routerLink=""  class="w3-bar-item w3-button">Gourmet au Catering</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a routerLink="/dishes" class="w3-bar-item w3-button">Menu</a>
+      <a routerLink="/drinks" class="w3-bar-item w3-button">Drinks</a>
+      <a *ngIf = "!token" routerLink="/order" class="w3-bar-item w3-button">Order</a>
+      <a class="w3-bar-item w3-button">Contact</a>
+      <a *ngIf = "!token"  routerLink="/register"><mat-icon>person</mat-icon></a> &nbsp;
+      <a *ngIf = "token" (click)="logOut()" class="w3-bar-item w3-button">Logout</a> &nbsp;
+      <a *ngIf = "!token" href=""><mat-icon>shopping_cart</mat-icon></a>&nbsp;
+      <a href=""><mat-icon>search</mat-icon></a> &nbsp;
+    </div>
+  </div>
+</div>
+
+

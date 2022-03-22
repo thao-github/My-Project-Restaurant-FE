@@ -1,0 +1,37 @@
+<!-- Register Section -->
+<div class="w3-content" style="max-width:1100px">
+<div class="w3-container w3-padding-64" id="contact">
+  <h1>Add New Dish</h1><br>
+  <form [formGroup]="dishForm" (ngSubmit)="create()">
+    <p>Please fill in this form to create a dish.</p>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Name" formControlName="name">
+      <small style="color: darkred" *ngIf="dishForm.controls['name'].hasError('required')
+      && dishForm.controls['name'].touched">Name required.</small>
+    </div>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Price" formControlName="price">
+      <small style="color: darkred" *ngIf="dishForm.controls['price'].hasError('required')
+      && dishForm.controls['price'].touched">Price required.</small>
+    </div>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="text" placeholder="Description" formControlName="description">
+      <small style="color: darkred" *ngIf="dishForm.controls['description'].hasError('required')
+      && dishForm.controls['description'].touched">Description required.</small>
+    </div>
+
+    <div>
+      <input class="w3-input w3-padding-16" type="file" placeholder="Image" #uploadFile formControlName="img" (change)="uploadFileImg()">
+      <img [src]="imgUrl">
+    </div>
+
+    <p style="color: darkgreen">{{status}}</p>
+    <p><button class="w3-button w3-light-grey w3-section" type="submit">ADD</button> &nbsp;
+      <button class="w3-button w3-light-grey w3-section" type="button" routerLink="/dishes">BACK</button></p>
+
+  </form>
+</div>
+</div>
